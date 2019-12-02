@@ -1,0 +1,97 @@
+﻿<link rel="stylesheet" href="~/Content/assets/css/lib/bootstrap.css">
+<link rel="stylesheet" href="~/Content/assets/css/lib/bootstrap-responsive.css">
+<link rel="stylesheet" href="~/Content/assets/css/extension.css">
+<link rel="stylesheet" href="~/Content/assets/css/boo.css">
+<link rel="stylesheet" href="~/Content/assets/css/style.css">
+<link rel="stylesheet" href="~/Content/assets/css/boo-coloring.css">
+<link rel="stylesheet" href="~/Content/assets/css/boo-utility.css">
+
+@model MongoDBMVC.Models.Employee
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.endereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.endereco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.endereco2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.endereco2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefone2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.redessociais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.redessociais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cpf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cpf)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar a lista", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,197 @@
+﻿
+<link rel="stylesheet" href="~/Content/assets/css/lib/bootstrap.css">
+<link rel="stylesheet" href="~/Content/assets/css/lib/bootstrap-responsive.css">
+<link rel="stylesheet" href="~/Content/assets/css/extension.css">
+<link rel="stylesheet" href="~/Content/assets/css/boo.css">
+<link rel="stylesheet" href="~/Content/assets/css/style.css">
+<link rel="stylesheet" href="~/Content/assets/css/boo-coloring.css">
+<link rel="stylesheet" href="~/Content/assets/css/boo-utility.css">
+
+
+
+@model MongoDBMVC.Models.Employee
+
+
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+  
+    <div class="row-fluid">
+        <div class="span8 grider">
+            <div class="widget widget-simple">
+                <div class="widget-header">
+                    <h4><i class="fontello-icon-user"></i>CRIAR UM NOVO CLIENTE</h4>
+                </div>
+                <div class="widget-content">
+                    <div class="widget-body">
+                        <form id="accounForm" class="form-horizontal" method="" action="#" novalidate="novalidate">                            
+                            <div class="row-fluid">
+                                <div class="span12 form-dark">
+                                    <fieldset>                                        
+                                        <ul class="form-list label-left list-bordered dotted">
+
+                                            <!-- // section form divider -->
+                                            <!-- nome,endereco,endereco2,data,telefone,telefone2,redessociais,cpf,rg-->
+
+                                            <li class="control-group">
+                                                <label for="accountPrefix" class="control-label">Nome</label>
+                                                @*@Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.nome, new { htmlAttributes = new { @class = "span6" } })
+                                                    @Html.ValidationMessageFor(model => model.nome, "", new { @class = "text-danger" })
+                                                </div>
+                                            </li>
+                                            <li class="control-group">
+                                                <label for="accountPrefix" class="control-label">Data Nascimento</label>
+                                                @*@Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.data, new { htmlAttributes = new { @class = "span6" } })
+                                                    @Html.ValidationMessageFor(model => model.data, "", new { @class = "text-danger" })
+                                                </div>
+                                            </li>
+                                            <!-- // form item -->
+
+                                            <li class="control-group">
+                                                <label for="accountFirstName" class="control-label">Endereco Residencial<span class="required">*</span></label>
+                                                @*@Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                                                <div class="controls">
+                                                    @Html.EditorFor(model => model.endereco, new { htmlAttributes = new { @class = "span11" } })
+                                                    @Html.ValidationMessageFor(model => model.endereco, "", new { @class = "text-danger" })
+                                                </div>
+                                            </li>
+                                            <li class="control-group">
+                                                <label for="accountFirstName" class="control-label">Endereco Comercial<span class="required">*</span></label>
+                                                @*@Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                                                <div class="controls">
+                                                    @Html.EditorFor(model => model.endereco2, new { htmlAttributes = new { @class = "span11" } })
+                                                    @Html.ValidationMessageFor(model => model.endereco2, "", new { @class = "text-danger" })
+                                                </div>
+                                            </li>
+                                            <!-- // form item -->
+
+                                            <li class="control-group">
+                                                <label for="accountLastName" class="control-label">Telefone Comercial <span class="required">*</span></label>
+                                                @*@Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                                                <div class="controls">
+                                                    @Html.EditorFor(model => model.telefone, new { htmlAttributes = new { @class = "span6 maskPhone margin-right5" } })
+                                                    @Html.ValidationMessageFor(model => model.telefone, "", new { @class = "text-danger" })
+                                                </div>
+                                            </li>
+
+                                            <li class="control-group">
+                                                <label for="accountLastName" class="control-label">Telefone Resindencial <span class="required">*</span></label>
+                                                @*@Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                                                <div class="controls">
+                                                    @Html.EditorFor(model => model.telefone2, new { htmlAttributes = new { @class = "span6 maskPhone margin-right5" } })
+                                                    @Html.ValidationMessageFor(model => model.telefone2, "", new { @class = "text-danger" })
+                                                </div>
+                                            </li>
+                                            <!-- // form item -->
+
+                                            <li class="control-group">
+                                                <label for="accountSuffix" class="control-label">Redes Socias</label>
+                                                @*@Html.LabelFor(model => model.Company, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                                                <div class="controls">
+                                                    @Html.EditorFor(model => model.redessociais, new { htmlAttributes = new { @class = "span6" } })
+                                                    @Html.ValidationMessageFor(model => model.redessociais, "", new { @class = "text-danger" })
+                                                </div>
+                                            </li>
+                                            <!-- // form item -->
+
+                                            <li class="control-group">
+                                                <label for="accountMiddleName" class="control-label">Numero RG</label>
+                                                @*@Html.LabelFor(model => model.Designation, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                                                <div class="controls">
+                                                    @Html.EditorFor(model => model.rg, new { htmlAttributes = new { @class = "span6" } })
+                                                    @Html.ValidationMessageFor(model => model.rg, "", new { @class = "text-danger" })
+                                                </div>
+                                            </li>
+
+                                            <li class="control-group">
+                                                <label for="accountMiddleName" class="control-label">Numero CPF</label>
+                                                @*@Html.LabelFor(model => model.Designation, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                                                <div class="controls">
+                                                    @Html.EditorFor(model => model.cpf, new { htmlAttributes = new { @class = "span6" } })
+                                                    @Html.ValidationMessageFor(model => model.cpf, "", new { @class = "text-danger" })
+                                                </div>
+                                            </li>
+                                            <!-- // form item -->
+                                            <!-- // form item -->
+
+                                        </ul>
+                                    </fieldset>
+                                    
+                                    <!-- // fieldset Input -->
+                                    <div class="form-actions">
+                                        <button type="submit" value="Create"  class="btn btn-blue">Salvar</button>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- // Widget -->
+
+        </div>
+        <!-- // Column -->
+
+        <div class="span4 grider">
+            <div class="widget widget-simple widget-notes">
+                <div class="widget-header">
+                    <h4><i class="fontello-icon-edit"></i> Notes</h4>
+                    <div class="widget-tool"><a class="btn btn-green btn-small btn-glyph" href="javascript:void(0);"> show all</a></div>
+                </div>
+                <div class="widget-content">
+                    <div class="widget-body">
+                        <form id="formNotes" class="form-dark">
+                            <fieldset>
+                                <label for="accountTaxVat" class="control-label"> Title</label>
+                                <input id="accountTaxVat" class="input-block-level" type="text">
+                                <label for="accountNotes">Note Text:</label>
+                                <textarea id="accountNotes" class="input-block-level" rows="4"></textarea>
+                            </fieldset>
+                            <!-- // fieldset Input -->
+
+                            <button class="btn btn-yellow btn-block">Add a note</button>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- // Widget -->
+
+            <div class="widget widget-simple">
+                <div class="widget-header">
+                    <h4><i class="fontello-icon-wrench-2"></i> Next setting for Account </h4>
+                </div>
+                
+            </div>
+            <!-- // Widget -->
+
+        </div>
+        <!-- // Column -->
+
+    </div>
+
+
+}
+
+<div>
+    @Html.ActionLink("Voltar a Lista de Clientes", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
+
+

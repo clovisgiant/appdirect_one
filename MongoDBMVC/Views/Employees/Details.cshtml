@@ -1,0 +1,90 @@
+﻿<link rel="stylesheet" href="~/Content/assets/css/lib/bootstrap.css">
+<link rel="stylesheet" href="~/Content/assets/css/lib/bootstrap-responsive.css">
+<link rel="stylesheet" href="~/Content/assets/css/extension.css">
+<link rel="stylesheet" href="~/Content/assets/css/boo.css">
+<link rel="stylesheet" href="~/Content/assets/css/style.css">
+<link rel="stylesheet" href="~/Content/assets/css/boo-coloring.css">
+<link rel="stylesheet" href="~/Content/assets/css/boo-utility.css">
+
+@model MongoDBMVC.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.endereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.endereco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.endereco2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.endereco2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefone2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.redessociais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.redessociais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cpf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cpf)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("voltar a Lista", "Index")
+</p>

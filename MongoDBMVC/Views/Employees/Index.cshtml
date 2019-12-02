@@ -1,0 +1,128 @@
+﻿@*@model IEnumerable<MongoDBMVC.Models.Employee>*@
+@model PagedList.IPagedList<MongoDBMVC.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <i class="fontello-icon-users">@Html.ActionLink("Criar novo Usuário", "Create")</i>
+
+</p>
+
+
+<input type="text" class="input-medium search-query">
+<button class="btn" type="submit">Buscar Cliente</button>
+
+
+<table class="table boo-table table-striped table-content table-hover bg-blue-light">
+    <caption>
+        Clientes cadastrados <span></span>
+    </caption>
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Data Nascimento</th>
+            <th scope="col">Endereco_Com</th>
+            <th scope="col">Endereco Res</th>
+            <th scope="col" class="hidden-phone">telefone_Co</th>
+            <th scope="col" class="hidden-tablet hidden-phone">telefone_Re</th>
+            <th scope="col">Redes</th>
+            <th scope="col">RG</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Ações</th>
+        </tr>
+    </thead>
+    @*<tr scope="col">
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Designation)
+            </th>
+            <th></th>
+        </tr>*@
+
+    <!-- nome,endereco,endereco2,data,telefone,telefone2,redessociais,cpf,rg-->
+
+    @foreach (var item in Model)
+    {
+        <tr scope="col">
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.data)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.endereco2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefone2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.redessociais)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rg)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.id }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.id })
+            </td>
+
+        </tr>
+    }
+
+</table>
+<div>
+    Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+
+    @if (Model.HasPreviousPage)
+    {
+        @Html.ActionLink("<<", "Index", new { pagina = 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+        @Html.Raw(" ");
+        @Html.ActionLink("< Anterior", "Index", new { pagina = Model.PageNumber - 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+    }
+    else
+    {
+        @:<<
+        @Html.Raw(" ");
+        @:< Anterior
+    }
+
+    @if (Model.HasNextPage)
+    {
+        @Html.ActionLink("Próxima >", "Index", new { pagina = Model.PageNumber + 1, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+        @Html.Raw(" ");
+        @Html.ActionLink(">>", "Index", new { pagina = Model.PageCount, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+    }
+    else
+    {
+        @:Próxima >
+        @Html.Raw(" ")
+        @:>>
+    }
+</div>
