@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="MongoDBMVCContext-Web.config Connection String" description="MongoDBMVCContext A Cadeia de Conexão usada em web.config pelo aplicativo para acessar o banco de dados." defaultValue="Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=MongoDBMVCContext-20190307015717; Integrated Security=True; MultipleActiveResultSets=True; AttachDbFilename=|DataDirectory|MongoDBMVCContext-20190307015717.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Clovis\\Desktop\\MongoDBMVC\\MongoDBMVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MongoDBMVCContext']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="Content/assets/css/lib/bootstrap.css" rel="stylesheet">
+    <link href="Content/assets/css/lib/bootstrap-responsive.css" rel="stylesheet">
+    <link href="Content/assets/css/extension.css" rel="stylesheet">
+    <link href="Content/assets/css/boo.css" rel="stylesheet">
+    <link href="Content/assets/css/style.css" rel="stylesheet">
+    <link href="Content/assets/css/boo-coloring.css" rel="stylesheet">
+    <link href="Content/assets/css/boo-utility.css" rel="stylesheet">
+</head>
+<body class="sidebar-left panel-side">
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("MongoDB Atlas With MVC", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Employee Details", "Index", "Employees")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>*@
+    <div id="header-container">
+        <div id="header">
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                        <a class="brand" href="javascript:void(0);"><img src="Content/assets/img/demo/logo_directone.png"></a>
+                        <div class="search-global">
+                            <input id="globalSearch" class="search search-query input-medium" type="search">
+                            <a class="search-button" href="javascript:void(0);"><i class="fontello-icon-search-5"></i></a>
+                        </div>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav user-menu visible-desktop">
+                                <li><a class="btn-glyph fontello-icon-edit tip-bc" href="javascript:void(0);" oldtitle="Messages" title=""><span class="badge badge-important">8</span></a></li>
+                                <li><a class="btn-glyph fontello-icon-mail-1 tip-bc" href="javascript:void(0);" oldtitle="Emails" title=""></a></li>
+                                <li><a class="btn-glyph fontello-icon-lifebuoy tip-bc" href="javascript:void(0);" oldtitle="Support" title=""><span class="badge badge-important">4</span></a></li>
+                            </ul>
+                            <ul class="nav">
+                                <li class="active">@Html.ActionLink("Home", "Index", "Home") </li>
+                                <li>@Html.ActionLink("Employee Details", "Index", "Employees") </li>
+                                <li>@Html.ActionLink("About", "About", "Home") </li>
+                                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><span class="fontello-icon-list-1"></span>Customize <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="component-form-demo.html">Demo Form</a></li>
+                                        <li><a href="component-widgets-remember.html">Remember</a></li>
+                                        <li><a href="component-widgets-users.html">User List</a></li>
+                                        <li class="divider"></li>
+                                        <li class="nav-header">Next Update</li>
+                                        <li><a href="javascript:void(0);">Contacts</a></li>
+                                        <li><a href="javascript:void(0);">Email</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // navbar -->
+
+            <div class="header-drawer">
+                <div class="mobile-nav text-center visible-phone"> <a href="javascript:void(0);" class="mobile-btn" data-toggle="collapse" data-target=".sidebar"><i class="aweso-icon-chevron-down"></i> Components</a> </div>
+                <!-- // Resposive navigation -->
+                <div class="breadcrumbs-nav hidden-phone">
+                    <ul id="breadcrumbs" class="breadcrumb">
+                        <li><a href="javascript:void(0);"><i class="fontello-icon-home f12"></i> Dashboard</a> <span class="divider">/</span></li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0);">Table </a> <span class="divider">/</span>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:void(0);">Table</a></li>
+                                <li><a href="javascript:void(0);">Elements</a></li>
+                                <li><a href="javascript:void(0);">Elements</a></li>
+                                <li><a href="javascript:void(0);">Elements</a></li>
+                            </ul>
+                        </li>
+                        <li class="active">Boo Admin </li>
+                    </ul>
+                </div>
+                <!-- // breadcrumbs -->
+            </div>
+            <!-- // drawer -->
+        </div>
+    </div>
+
+
+   
+
+
+
+    
+
+        <div class="container body-content">
+                @RenderBody()
+                <hr />
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                </footer>
+            </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+﻿@model IEnumerable<MongoDBMVC.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+@*<table class="table boo-table table-striped table-content table-hover bg-blue-light">
+    <caption>
+        Boo table in well <span>well-small and backgroud</span>
+    </caption>
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col" class="hidden-phone">City</th>
+            <th scope="col" class="hidden-tablet hidden-phone">Email</th>
+            <th scope="col">Date of birth</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Colin Nixon</td>
+            <td class="hidden-phone">Long Beach</td>
+            <td class="hidden-tablet hidden-phone">semper@diamSeddiam.edu</td>
+            <td>02/10/1986</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Naida Bennett</td>
+            <td class="hidden-phone">Lockport</td>
+            <td class="hidden-tablet hidden-phone">commodo@conseque.ca</td>
+            <td>04/21/1959</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Danielle Myers</td>
+            <td class="hidden-phone">Bentonville</td>
+            <td class="hidden-tablet hidden-phone">nunc.sed@liberoInteger.ca</td>
+            <td>12/11/1971</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Whitney Jones</td>
+            <td class="hidden-phone">Troy</td>
+            <td class="hidden-tablet hidden-phone">Nunc@sedliberoProin.edu</td>
+            <td>08/09/1976</td>
+        </tr>
+    </tbody>
+</table>*@
+
+
+
+
+
+
+<table class="table boo-table table-striped table-content table-hover bg-blue-light" ">
+    <caption>
+        Boo table in well <span>well-small and backgroud</span>
+    </caption>
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col" class="hidden-phone">Gender</th>
+            <th scope="col" class="hidden-tablet hidden-phone">Company</th>
+            <th scope="col">Designation</th>
+        </tr>
+    </thead>
+    @*<tr scope="col">
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Company)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Designation)
+        </th>
+        <th></th>
+    </tr>*@
+
+    @foreach (var item in Model)
+    {
+        <tr scope="col">
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Designation)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>
